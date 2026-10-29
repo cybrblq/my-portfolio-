@@ -18,10 +18,20 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="s-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#F1F0EB"/><rect width="3" height="6" fill="#C98C00"/></pattern>
+    <symbol id="logo-s" viewBox="0 0 34 38">
+      <path d="M34 0V9H12Q9 9 9 12V14.5H0V11A11 11 0 0 1 11 0Z" fill="#23262B"/>
+      <path d="M0 14.5H23A11 11 0 0 1 34 25.5V29.5H25V26.5Q25 23.5 22 23.5H8A8 8 0 0 1 0 15.5Z" fill="#2A4BD7"/>
+      <path d="M0.8 30.3H33.2V30A7.2 7.2 0 0 1 26 37.2H0.8Z" fill="url(#s-hatch)" stroke="#C98C00" stroke-width="1.6" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
 
 <div class="wrap">
   <header class="top">
-    <a class="me press" href="#top">Samuel Ayinla</a>
+    <a class="me press" href="#top" aria-label="Samuel Ayinla, back to top"><svg class="logo" viewBox="0 0 34 38" aria-hidden="true" focusable="false"><use href="#logo-s"/></svg><span aria-hidden="true">amuel Ayinla</span></a>
     <nav aria-label="Main">
       <a class="navlink press" href="#work">Work</a>
       <a class="navlink press" href="#how">How I work</a>
@@ -34,8 +44,8 @@
   <div class="wrap" id="top">
     <section class="hero" aria-labelledby="name">
       <div>
-        <h1 id="name" class="name">Samuel<br>Ayinla</h1>
-        <p class="lede">Technical product and project manager. I plan the work, then I build a lot of it myself.</p>
+        <h1 id="name" class="name">Technical product and project manager.</h1>
+        <p class="lede">I plan the work, then I build a lot of it myself.</p>
         <div class="ctas">
           <a class="btn press" href="#contact">Get in touch</a>
           <a class="btn line press" href="#case">Read a case study</a>
