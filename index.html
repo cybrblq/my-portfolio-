@@ -59,7 +59,7 @@
           <li><i class="sw hand"></i>Handed to client</li>
         </ul>
       </div>
-      <p class="road-hint">Tap a bar to see what it was. This year is zoomed in so the recent work is readable.</p>
+      <p class="road-hint">Tap a bar to read about it, or drag across the chart to see what I was working on at any point. This year is zoomed in so recent work is readable.</p>
       <div class="chart" id="chart"></div>
       <div class="inspect" id="inspect" aria-live="polite"></div>
     </section>
@@ -85,22 +85,20 @@
           <svg id="flow" viewBox="0 0 640 250" role="img" aria-labelledby="flow-desc">
             <desc id="flow-desc">When a call ends, Android wakes a call receiver registered in the app manifest. It hands off to a WorkManager worker, which opens the after call screen with its ads. The permissions screen, asked once at onboarding, unlocks the receiver.</desc>
             <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#23262B"/></marker></defs>
-            <g class="node"><rect x="4" y="30" width="130" height="64" rx="8" class="n-plain"/><text x="69" y="58" class="t-b">Call ends</text><text x="69" y="78" class="t-s">Android system</text></g>
-            <g class="node"><rect x="174" y="30" width="140" height="64" rx="8" class="n-sdk"/><text x="244" y="58" class="t-b">Call receiver</text><text x="244" y="78" class="t-s">In the manifest</text></g>
-            <g class="node"><rect x="354" y="30" width="130" height="64" rx="8" class="n-sdk"/><text x="419" y="58" class="t-b">Launch worker</text><text x="419" y="78" class="t-s">WorkManager</text></g>
-            <g class="node"><rect x="524" y="30" width="112" height="64" rx="8" class="n-end"/><text x="580" y="58" class="t-b inv">After call</text><text x="580" y="78" class="t-s inv">screen and ads</text></g>
-            <line x1="134" y1="62" x2="170" y2="62" class="edge" marker-end="url(#ar)"/>
-            <line x1="314" y1="62" x2="350" y2="62" class="edge" marker-end="url(#ar)"/>
-            <line x1="484" y1="62" x2="520" y2="62" class="edge" marker-end="url(#ar)"/>
-            <rect x="174" y="150" width="310" height="54" rx="8" class="n-perm"/>
-            <text x="329" y="173" class="t-b">Permissions screen</text><text x="329" y="192" class="t-s">Asked once at onboarding, no way around it</text>
-            <line x1="329" y1="150" x2="329" y2="100" class="edge dashed" marker-end="url(#ar)"/>
+            <g class="node" data-x0="4" data-x1="134"><rect x="4" y="30" width="130" height="64" rx="8" class="n-plain"/><text x="69" y="58" class="t-b">Call ends</text><text x="69" y="78" class="t-s">Android system</text></g>
+            <g class="node" data-x0="174" data-x1="314" data-unlock><rect x="174" y="30" width="140" height="64" rx="8" class="n-sdk"/><text x="244" y="58" class="t-b">Call receiver</text><text x="244" y="78" class="t-s">In the manifest</text></g>
+            <g class="node" data-x0="354" data-x1="484"><rect x="354" y="30" width="130" height="64" rx="8" class="n-sdk"/><text x="419" y="58" class="t-b">Launch worker</text><text x="419" y="78" class="t-s">WorkManager</text></g>
+            <g class="node end" data-x0="524" data-x1="636"><rect x="524" y="30" width="112" height="64" rx="8" class="n-end"/><text x="580" y="58" class="t-b inv">After call</text><text x="580" y="78" class="t-s inv">screen and ads</text></g>
+            <line x1="134" y1="62" x2="170" y2="62" class="edge" data-x0="134" data-x1="174" marker-end="url(#ar)"/>
+            <line x1="314" y1="62" x2="350" y2="62" class="edge" data-x0="314" data-x1="354" marker-end="url(#ar)"/>
+            <line x1="484" y1="62" x2="520" y2="62" class="edge" data-x0="484" data-x1="524" marker-end="url(#ar)"/>
+            <g class="node perm" id="perm"><rect x="174" y="150" width="310" height="54" rx="8" class="n-perm"/>
+            <text x="329" y="173" class="t-b">Permissions screen</text><text x="329" y="192" class="t-s">Asked once at onboarding, no way around it</text></g>
+            <line x1="329" y1="150" x2="329" y2="100" class="edge dashed" id="unlock" marker-end="url(#ar)"/>
             <text x="340" y="128" class="t-s start">unlocks</text>
             <text x="4" y="240" class="t-s start">Replaced: an always on service that a user could kill with one swipe and a tap.</text>
-            <circle class="signal" r="6" cx="0" cy="0">
-              <animateMotion id="sig" dur="2.8s" repeatCount="indefinite" path="M69 62 H580" keyPoints="0;1;1" keyTimes="0;0.8;1" calcMode="linear"/>
-              <animate attributeName="opacity" dur="2.8s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.08;0.78;0.86;1"/>
-            </circle>
+            <circle class="ring" id="ring" cx="580" cy="62" r="30"/>
+            <circle class="signal" id="ball" r="7" cx="69" cy="62"/>
           </svg>
         </figure>
         <div class="decisions">
@@ -160,7 +158,7 @@
           <li><b>Written down.</b>Roadmaps, security checklists and handover docs, so nobody has to guess.</li>
           <li><b>Built with Claude Code.</b>I make the architecture calls, review every change and do the QA myself.</li>
         </ol>
-        <p class="cert">Google Cybersecurity Certificate</p>
+        <p class="cert"><a class="cert-link press" href="https://www.credly.com/badges/70c42e90-3d0b-44bd-b3d8-091888c26d56" target="_blank" rel="noopener">Google Cybersecurity Certificate</a></p>
       </div>
       <div class="contact" id="contact" aria-labelledby="contact-title">
         <h2 id="contact-title">Let's talk</h2>
