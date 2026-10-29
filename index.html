@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Samuel Ayinla, technical product and project manager</title>
+<meta name="description" content="Technical product and project manager with 5+ years in product and delivery. I plan the work, then I build a lot of it myself.">
+<meta name="theme-color" content="#F1F0EB">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Samuel Ayinla">
+<meta property="og:description" content="Technical product and project manager. I plan the work, then I build a lot of it myself.">
+<meta property="og:image" content="/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("anim")</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+  <header class="top">
+    <a class="me press" href="#top">Samuel Ayinla</a>
+    <nav aria-label="Main">
+      <a class="navlink press" href="#work">Work</a>
+      <a class="navlink press" href="#how">How I work</a>
+      <a class="btn press" href="#contact">Get in touch</a>
+    </nav>
+  </header>
+</div>
+
+<main id="main">
+  <div class="wrap" id="top">
+    <section class="hero" aria-labelledby="name">
+      <div>
+        <h1 id="name" class="name">Samuel<br>Ayinla</h1>
+        <p class="lede">Technical product and project manager. I plan the work, then I build a lot of it myself.</p>
+        <div class="ctas">
+          <a class="btn press" href="#contact">Get in touch</a>
+          <a class="btn line press" href="#case">Read a case study</a>
+        </div>
+      </div>
+      <dl class="facts">
+        <div><dt>Experience</dt><dd>5+ years, product and delivery</dd></div>
+        <div><dt>Builds in</dt><dd>Kotlin, React Native, React, Supabase</dd></div>
+        <div><dt>Works with</dt><dd>Early stage teams and solo founders</dd></div>
+        <div><dt>Available</dt><dd>Now, remote, US Eastern hours</dd></div>
+      </dl>
+    </section>
+
+    <section class="road" id="work" aria-labelledby="road-title">
+      <div class="road-head">
+        <h2 id="road-title">Five years on one timeline</h2>
+        <ul class="legend" aria-label="Key">
+          <li><i class="sw done"></i>Done</li>
+          <li><i class="sw build"></i>In build</li>
+          <li><i class="sw hold"></i>On hold</li>
+          <li><i class="sw hand"></i>Handed to client</li>
+        </ul>
+      </div>
+      <p class="road-hint">Tap a bar to see what it was. This year is zoomed in so the recent work is readable.</p>
+      <div class="chart" id="chart"></div>
+      <div class="inspect" id="inspect" aria-live="polite"></div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="case" id="case" aria-labelledby="case-title">
+      <div>
+        <p class="kicker">Case study</p>
+        <h2 id="case-title">MoodifySDK</h2>
+        <p class="sum">Moodify's apps relied on another company's ad SDK. When that ended in December 2025, the after call screen and its revenue went with it. I proposed we build our own, then built it.</p>
+        <dl class="meta">
+          <dt>My part</dt><dd>Proposal, architecture, build, review, QA, integration</dd>
+          <dt>Built with</dt><dd>Kotlin, WorkManager, AdMob, Play Billing, Claude Code</dd>
+          <dt>Built for</dt><dd>VoiceBox, PaperClip, Shuffl</dd>
+          <dt>Outcome</dt><dd>Paid licence and integration; the client owns it now</dd>
+        </dl>
+      </div>
+      <div>
+        <figure class="diagram">
+          <figcaption>How it works</figcaption>
+          <p class="swipe">Swipe sideways to see the whole flow.</p>
+          <svg id="flow" viewBox="0 0 640 250" role="img" aria-labelledby="flow-desc">
+            <desc id="flow-desc">When a call ends, Android wakes a call receiver registered in the app manifest. It hands off to a WorkManager worker, which opens the after call screen with its ads. The permissions screen, asked once at onboarding, unlocks the receiver.</desc>
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#23262B"/></marker></defs>
+            <g class="node"><rect x="4" y="30" width="130" height="64" rx="8" class="n-plain"/><text x="69" y="58" class="t-b">Call ends</text><text x="69" y="78" class="t-s">Android system</text></g>
+            <g class="node"><rect x="174" y="30" width="140" height="64" rx="8" class="n-sdk"/><text x="244" y="58" class="t-b">Call receiver</text><text x="244" y="78" class="t-s">In the manifest</text></g>
+            <g class="node"><rect x="354" y="30" width="130" height="64" rx="8" class="n-sdk"/><text x="419" y="58" class="t-b">Launch worker</text><text x="419" y="78" class="t-s">WorkManager</text></g>
+            <g class="node"><rect x="524" y="30" width="112" height="64" rx="8" class="n-end"/><text x="580" y="58" class="t-b inv">After call</text><text x="580" y="78" class="t-s inv">screen and ads</text></g>
+            <line x1="134" y1="62" x2="170" y2="62" class="edge" marker-end="url(#ar)"/>
+            <line x1="314" y1="62" x2="350" y2="62" class="edge" marker-end="url(#ar)"/>
+            <line x1="484" y1="62" x2="520" y2="62" class="edge" marker-end="url(#ar)"/>
+            <rect x="174" y="150" width="310" height="54" rx="8" class="n-perm"/>
+            <text x="329" y="173" class="t-b">Permissions screen</text><text x="329" y="192" class="t-s">Asked once at onboarding, no way around it</text>
+            <line x1="329" y1="150" x2="329" y2="100" class="edge dashed" marker-end="url(#ar)"/>
+            <text x="340" y="128" class="t-s start">unlocks</text>
+            <text x="4" y="240" class="t-s start">Replaced: an always on service that a user could kill with one swipe and a tap.</text>
+            <circle class="signal" r="6" cx="0" cy="0">
+              <animateMotion id="sig" dur="2.8s" repeatCount="indefinite" path="M69 62 H580" keyPoints="0;1;1" keyTimes="0;0.8;1" calcMode="linear"/>
+              <animate attributeName="opacity" dur="2.8s" repeatCount="indefinite" values="0;1;1;0;0" keyTimes="0;0.08;0.78;0.86;1"/>
+            </circle>
+          </svg>
+        </figure>
+        <div class="decisions">
+          <h3>Calls I made</h3>
+          <ol>
+            <li><p>Dropped the always on service for a receiver and a background worker.<span>The old service died with one swipe and a tap. The new setup is woken by Android itself, so closing the app doesn't kill it.</span></p></li>
+            <li><p>Built and tested everything in a separate playground app first.<span>No live app got touched until the SDK worked on its own.</span></p></li>
+            <li><p>Scoped the Google Play compliance upgrades as separate paid work.<span>Kept the original contract clean and the client clear on cost.</span></p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="other" aria-labelledby="other-title">
+      <h2 id="other-title">Other projects</h2>
+      <div class="plist">
+        <article class="p" id="p-voicebox" tabindex="-1">
+          <div class="p-top"><h3>VoiceBox</h3><span class="st"><i class="sw done"></i>Live on Play Store</span></div>
+          <p class="what">Audio recording and editing app for Android.</p>
+          <p class="call">Merge, adjust and trim recordings, with the after call screen built in and permissions asked once, with no way to skip past them.</p>
+          <p class="stack">Kotlin, MoodifySDK, AdMob</p>
+          <a class="plink press" data-store="voicebox" href="#" hidden>See it on Google Play</a>
+        </article>
+        <article class="p" id="p-paperclip" tabindex="-1">
+          <div class="p-top"><h3>PaperClip</h3><span class="st"><i class="sw done"></i>Live on Play Store</span></div>
+          <p class="what">Android bookmark manager that summarises what you save.</p>
+          <p class="call">Summaries run through Groq so they come back fast, with everything stored on the phone.</p>
+          <p class="stack">Kotlin, Jetpack Compose, Room, Groq</p>
+          <a class="plink press" data-store="paperclip" href="#" hidden>See it on Google Play</a>
+        </article>
+        <article class="p" id="p-outsyde" tabindex="-1">
+          <div class="p-top"><h3>Outsyde</h3><span class="st"><i class="sw build"></i>In build, about 90% done</span></div>
+          <p class="what">Find what's happening around you in Osogbo. My own product.</p>
+          <p class="call">Split reports into three tables with real links between them, so the access rules stay easy to check.</p>
+          <p class="stack">React Native, Expo, Supabase</p>
+        </article>
+        <article class="p" id="p-smokecity" tabindex="-1">
+          <div class="p-top"><h3>Smoke City</h3><span class="st"><i class="sw done"></i>Ready to launch</span></div>
+          <p class="what">Online store rebuild for a Nigerian retailer. Client project.</p>
+          <p class="call">Guest checkout first, every payment through Paystack, and a staff area only the owner can open.</p>
+          <p class="stack">React, Vite, TypeScript, Supabase, Paystack</p>
+        </article>
+        <article class="p" id="p-circle" tabindex="-1">
+          <div class="p-top"><h3>Circle</h3><span class="st"><i class="sw hold"></i>On hold</span></div>
+          <p class="what">Lets founders hand routine messages to an AI.</p>
+          <p class="call">Telegram first, with row level security on every table from day one.</p>
+          <p class="stack">React Native, Expo, Supabase, Claude API</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div class="how" id="how" aria-labelledby="how-title">
+        <h2 id="how-title">How I work</h2>
+        <ol>
+          <li><b>Problem first.</b>I talk to the people stuck with it, then cut the feature list down to what matters.</li>
+          <li><b>Written down.</b>Roadmaps, security checklists and handover docs, so nobody has to guess.</li>
+          <li><b>Built with Claude Code.</b>I make the architecture calls, review every change and do the QA myself.</li>
+        </ol>
+        <p class="cert">Google Cybersecurity Certificate</p>
+      </div>
+      <div class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let's talk</h2>
+        <p>Open to remote product and project roles, full time or contract, and to founders who need something built.</p>
+        <ul class="links">
+          <li><a class="soc press" href="mailto:adeyemisam42@gmail.com"><span class="ic"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></span><span class="k">Email</span><span class="v">adeyemisam42@gmail.com</span></a></li>
+          <li><a class="soc press" href="https://wa.me/2348148855525" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span><span class="k">WhatsApp</span><span class="v">+234 814 885 5525</span></a></li>
+          <li><a class="soc press" href="https://t.me/noirtec" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></span><span class="k">Telegram</span><span class="v">@noirtec</span></a></li>
+          <li><a class="soc press" href="https://www.linkedin.com/in/samuel-project-manager/" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 12h.01" /><path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><path d="M22 13a18.15 18.15 0 0 1-20 0" /><rect width="20" height="14" x="2" y="6" rx="2" /></svg></span><span class="k">LinkedIn</span><span class="v">Samuel Ayinla</span></a></li>
+          <li><a class="soc press" href="https://contra.com/sam_ola_g583ixol" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m11 17 2 2a1 1 0 1 0 3-3" /><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4" /><path d="m21 3 1 11h-2" /><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3" /><path d="M3 4h8" /></svg></span><span class="k">Contra</span><span class="v">Hire me for a project</span></a></li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+  <footer class="foot"><span>&copy; <span id="yr">2026</span> Samuel Ayinla</span><span>Lagos and Osun, Nigeria</span></footer>
+</div>
+
+<script src="/main.js" defer></script>
+</body>
+</html>
