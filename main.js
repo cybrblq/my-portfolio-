@@ -283,6 +283,31 @@ function runFlow() {
   new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop()), { threshold: 0.35 }).observe(svg);
 }
 
+// Copy email: copies the address and confirms right under the buttons.
+function copyEmail() {
+  const btn = document.querySelector(".copy");
+  const note = document.querySelector(".copied");
+  if (!btn) return;
+  let t;
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy;
+    let ok = false;
+    try { await navigator.clipboard.writeText(text); ok = true; }
+    catch (e) {
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand("copy"); } catch (e2) { ok = false; }
+      ta.remove();
+    }
+    btn.textContent = ok ? "Copied" : "Copy email";
+    btn.classList.toggle("done", ok);
+    note.textContent = ok ? `${text} is on your clipboard.` : `Couldn't copy. The address is ${text}.`;
+    clearTimeout(t);
+    t = setTimeout(() => { btn.textContent = "Copy email"; btn.classList.remove("done"); note.textContent = ""; }, 2600);
+  });
+}
+
 function storeLinks() {
   document.querySelectorAll("[data-store]").forEach(a => {
     const url = STORE[a.dataset.store];
@@ -293,6 +318,7 @@ function storeLinks() {
 
 document.getElementById("yr").textContent = today.getFullYear();
 storeLinks();
+copyEmail();
 buildChart();
 select(DEFAULT, false);
 runFlow();
